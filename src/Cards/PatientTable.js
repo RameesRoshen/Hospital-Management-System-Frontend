@@ -20,7 +20,7 @@ function PatientTable() {
 
     return (
         <div>
-            <div className='text-light d-flex  justify-content-center  align-items-center mt-5'>
+            <div className='text-light d-flex  justify-content-center  align-items-center mt-5 px-2'>
                 <table style={{ width: "800px" }}>
 
                     <tr>

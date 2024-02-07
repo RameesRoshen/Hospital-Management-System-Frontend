@@ -100,7 +100,7 @@ const handleAdd =async(e)=>{
         
   
   
-  <div className='m-4 bg-light p-2 rounded-2  d-flex justify-content-between align-items-center '>
+  <div className='m-4 bg-light p-2 rounded-2  d-flex justify-content-between align-items-center flex-wrap'>
   
       <h3 className='ms-3' >Department</h3>
       

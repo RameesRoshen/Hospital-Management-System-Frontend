@@ -3,6 +3,7 @@ import Adheader from './Adheader';
 import Adleftside from './Adleftside';
 import { allAppointmentApi, allDoctorApi, allPatientApi } from '../services/allAPI';
 
+import './Adhome.css'
 
 
 
@@ -50,9 +51,9 @@ function Adhome() {
       <Adheader />
       <Adleftside />
 
-      <div className='me-5 d-flex flex-wrap justify-content-end mt-5 pt-5  pe-5   '>
+      <div className=' d-flex flex-wrap justify-content-center  ms-5 mt-5 pt-5  ps-5 status-cards-container  '>
        
-      <div className="status-card  d-flex rounded-3  mt-3 overflow-hidden    me-5"  style={{backgroundColor:'#4CAF50' , color: 'white'}}>
+      <div className="status-card  d-flex rounded-3  mt-3 overflow-hidden    "  style={{backgroundColor:'#4CAF50' , color: 'white'}}>
       <div className="icon-section p-3 d-flex  align-items-center  justify-content-center  fs-2 " style={{ backgroundColor: '#388E3C'}}>
       <i class="fa-solid fa-bed-pulse me-2"></i>
        
@@ -63,7 +64,7 @@ function Adhome() {
       </div>
     </div>
 
-    <div className="status-card d-flex rounded-3  mt-3 overflow-hidden    me-5" style={{backgroundColor:' #FF6666' , color: 'white'}}>
+    <div className="status-card d-flex rounded-3  mt-3 overflow-hidden    " style={{backgroundColor:' #FF6666' , color: 'white'}}>
       <div className="icon-section p-3 d-flex  align-items-center  justify-content-center  fs-2 " style={{backgroundColor:'#FF0000'}}>
       <i class="fa-regular fa-calendar-check me-2"></i>
        
@@ -74,7 +75,7 @@ function Adhome() {
       </div>
     </div>
 
-    <div className="status-card d-flex rounded-3  mt-3 overflow-hidden    me-5"  style={{backgroundColor:'#6699FF ' , color: 'white'}}>
+    <div className="status-card d-flex rounded-3  mt-3 overflow-hidden    "  style={{backgroundColor:'#6699FF ' , color: 'white'}}>
       <div className="icon-section p-3 d-flex  align-items-center  justify-content-center  fs-2 " style={{backgroundColor:'#0000FF'}}  >
       <i class="fa-solid fa-notes-medical me-2"></i>
       </div>

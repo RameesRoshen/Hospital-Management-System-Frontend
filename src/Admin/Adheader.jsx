@@ -1,49 +1,44 @@
-import React, { useContext } from 'react'
 
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Logo from '../images/abc-high-resolution-logo-transparent.png'
+
+import React, { useContext } from 'react';
+import { Container, Navbar, Nav, Collapse, Button } from 'react-bootstrap';
+import Logo from '../images/abc-high-resolution-logo-transparent.png';
 import { isAuthTokenContext } from '../Context/ContextShare';
 import { useNavigate } from 'react-router-dom';
 
-function Adheader({adhome}) {
+function Adheader({ adhome }) {
+  const { isAuthToken, setIsAuthToken } = useContext(isAuthTokenContext);
+  const navigate = useNavigate();
 
+  const handleLogout = () => {
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem('existingUser');
+    setIsAuthToken(false);
+    navigate('/adlogin');
+  };
 
-  const {isAuthToken,setIsAuthToken} =useContext(isAuthTokenContext)
-  const navigate =useNavigate()
-  const handleLogout =()=>{
-    sessionStorage.removeItem("token")
-    sessionStorage.removeItem("existingUser")
-    setIsAuthToken(false)
-    navigate('/adlogin')
-  
-  }
+  const [open, setOpen] = React.useState(false);
 
   return (
-    <div style={{position:'fixed',top: 0, left: 0, right: 0, zIndex: 1000 }}>
-        
-        <Navbar bg="light">
-  <Container>
-    <img className='ms-0' style={{ width: '60px' }} src={Logo} alt="no image" />
-  
-  
-    <h2 className='text-center text-dark fw-bold '>ADMINISTRATION</h2>
-      <div className="me-1">
-        <button onClick={handleLogout} className='btn btn-success rounded'>LOGOUT</button>
-      </div>
- 
-  </Container>
-</Navbar>
-
-
-
+      <div
+        className=" "
+        style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000 }}
+      >
+        <Navbar bg="light" expand="lg" className="shadow-sm">
+          <Container >
             
-    </div>
-  )
+              <img className="ms-0" style={{ width: '60px' }} src={Logo} alt="no image" />
+            
+          
+            <h2 className='text-center text-dark fw-bold '>ADMIN</h2>
+            <Button onClick={handleLogout} className="btn btn-success rounded">
+              LOGOUT
+            </Button>
+          </Container>
+        </Navbar>
+      </div>
+  
+  );
 }
 
-export default Adheader
-
-
-
+export default Adheader;

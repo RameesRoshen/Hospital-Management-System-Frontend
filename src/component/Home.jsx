@@ -19,10 +19,10 @@ function Home() {
    <>
    <Header />
         <div  style={{ backgroundImage: `linear-gradient(rgba(33, 11, 11, 0.7), rgba(0, 0, 0, 0.7)), url(${homebg})`,backgroundSize:'cover',backgroundPosition:'center', width:'100%' , height:'700px' }}>
-        <div className='text-light  ps-3 ms-3 ps-md-5 ms-md-5' style={{paddingTop:'330px', width:'450px'}}>
+        <div className='text-light  ps-auto ms-1 ps-md-5 ms-md-5' style={{paddingTop:'300px', width:'400px'}}>
     <h2>Making Health</h2>
     <h2>Care Better Together</h2>
-    <p  >Also you dry creeping beast multiply fourth abundantly our itself signs bring our. Won form living. Whose dry you seasons divide given gathering great in whose you'll greather let livein form beast  better together these place absosolute right.</p>
+    <p style={{fontSize:'19px'}} className='first-para' >Also you dry creeping beast multiply fourth abundantly our itself signs bring our. Won form living. Whose dry you seasons divide given gathering great in whose you'll greather let livein form beast  better together these place absosolute right.</p>
     <Link to={`/login`} className='btn btn-info rounded me-3 fw-bold'>Make an Appointment</Link>
     <Link to={`/departmentdetails`} className='btn border-light rounded fw-bolder'>View Department</Link>
 </div>
@@ -51,7 +51,7 @@ function Home() {
       </div>
       <div className='mx-3' style={{ borderLeft: '4px solid white', height: '510px' }}></div>
        <div className="me-3 py-2 d-flex  flex-column  align-items-center  justify-content-center text-light ">
-        <p className='text-md fs-5 text-sm fs-4 text-xs fs-3'>
+        <p style={{fontSize:'25px'}}>
           In the short span of its existence, ABC Hospital has created its niche on the 
           map of quality healthcare delivery in India by touching million lives.
           Having earned the trust and loyalty of patients through the compassion of its

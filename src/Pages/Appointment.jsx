@@ -125,30 +125,30 @@ useEffect(() => {
   return (
     <>
       <div style={{ backgroundImage: `linear-gradient(rgba(33, 11, 11, 0.7), rgba(0, 0, 0, 0.7)), url(${Appointbg})`, backgroundSize: 'cover', backgroundPosition: 'center', width: '100%', height: '730px' }}>
-        <Container className="mx-5 d-flex justify-content-between align-content-center  ">
-          <Image className="mt-2" style={{ width: '80px' }} src={Logo} alt="no image" />
+        <Container className="mx-2 mx-md-4 mx-lg-5 d-flex justify-content-between align-content-center">
+          <Image className="mt-2" style={{ width: '80px'  }} src={Logo} alt="no image" />
           <div className="me-1 mt-4 pt-2">
             <Button onClick={handleLogout} className="btn btn-success rounded">LOGOUT</Button>
           </div>
         </Container>
 
-        <Container className="pe-5 me-5 justify-content-between d-flex align-items-center">
-          <div className="p-5 ms-5 mt-5">
-            <div className="col-md d-flex flex-column align-items-start justify-content-start mt-5 ">
-              <div className="headline text-light fw-bolder fs-1 ms-5 mt-5 ps-4 pt-4">Meet the Best Hospital</div>
-              <p className="h text-light ms-5 ps-4 fs-6 pt-2">We know how large objects will act, <br /> but things on a small scale.</p>
-              <div className="cta ms-4">
-                <Link to={`/`} className="btn btn-success rounded me-3 fw-bold ms-5">Learn More</Link>
-              </div>
-            </div>
-          </div>
+<Container className="px-2 px-md-4 px-lg-5 mt-3 mt-md-2 d-flex flex-column justify-content-between align-items-center">
+  {/* <div className="p-3 p-md-5 ms-2 ms-md-3">
+    <div className="col-md d-flex flex-column align-items-start justify-content-start mt-5 ">
+      <div className="headline text-light fw-bolder fs-1 ms-3 ms-md-5 mt-4 pt-2">Meet the Best Hospital</div>
+      <p className="h text-light ms-3 ms-md-5 fs-6 pt-2">We know how large objects will act, <br /> but things on a small scale.</p>
+      <div className="cta ms-3 ms-md-4">
+        <Link to={`/`} className="btn btn-success rounded me-3 fw-bold ms-3 ms-md-5">Learn More</Link>
+      </div>
+    </div>
+  </div> */}
 
-          <div className="bg-light px-5 py-4 rounded" style={{ width: '450px' }}>
-            <div>
-              <div className="border-b border-gray-900/10 pb-12 flex-wrap">
-                <h2 className="text-dark fw-bolder d-flex justify-content-center">BOOK APPOINTMENT</h2>
+  <div className="bg-light px-3 px-md-5 py-3 rounded" style={{ width: '100%', maxWidth: '450px', marginBottom: '200px' }}>
+    <div>
+      <div className="border-b border-gray-900/10 pb-4 pb-md-12 flex-wrap">
+        <h2 className="text-dark fw-bolder d-flex justify-content-center">BOOK APPOINTMENT</h2>
 
-                <Form className="mt-8  ">
+        <Form className="mt-4 mt-md-8">
                   <Form.Group className="mb-3" controlId="formFullName">
                     <Form.Label>Full Name</Form.Label>
                     <Form.Control type="text" value={appointmentDetails.fullname} onChange={(e) => setAppointmentDetails({ ...appointmentDetails, fullname: e.target.value })} placeholder="Enter your full name" />

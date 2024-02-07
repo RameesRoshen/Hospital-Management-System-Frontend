@@ -93,8 +93,8 @@ function Adlogin() {
   return (
     <>
       
-      <div className='d-flex justify-content-center align-items-center   mt-5 pt-5' >
-           <div style={divStyle} className=' ps-5 pe-5 pt-3 pb-5 mb-5 mt-4 rounded bg-light d-flex  flex-column  align-items-center    justify-content-center '>
+      <div className='d-flex justify-content-center align-items-center    mt-5 pt-5' >
+           <div style={divStyle} className=' ps-5 pe-5 pt-3 pb-5 mb-5 mt-4 rounded bg-light d-flex  flex-column  align-items-center    justify-content-center  '>
            <img className=' ' style={{ width: '80px' }} src={Logo} alt="no image" />
            <h3 className=' fw-bolder pt-2' style={{color:'white'}}>ADMIN PANEL</h3>
            <p>Controll Panel Login</p>

@@ -124,23 +124,19 @@ const getPatientLength =async ()=>{
 
   return (
     <div className=''>
-         <div className='m-4 bg-light p-2 rounded-2   d-flex  align-items-center  justify-content-center  '>
-  
-      <h3 className='ms-3 fw-bolder  text-dark  fs-1 pt-1' ><i class="fa-solid fa-hospital-user me-2"></i>Dashboard</h3>
-      
-          
-        
-  
-  </div>
+    <div className='m-4 bg-light p-2 rounded-2 d-flex align-items-center justify-content-center '>
+      <h3 className='ms-3 fw-bolder text-dark fs-1 pt-1'>
+        <i className="fa-solid fa-hospital-user me-2"></i>Dashboard
+      </h3>
+    </div>
 
-  <div className=' d-flex  justify-content-center     main-div     '>
-       
-       <div className="status-card  d-flex rounded-3  mt-3 overflow-hidden    me-5"  style={{backgroundColor:'#4CAF50' , color: 'white'}}>
+    <div className='d-flex justify-content-center flex-wrap  main-div '>
+       <div className="status-card  d-flex rounded-3  mt-3       me-5"  style={{backgroundColor:'#4CAF50' , color: 'white'}}>
        <div className="icon-section p-3 d-flex  align-items-center  justify-content-center  fs-2 " style={{ backgroundColor: '#388E3C'}}>
        <i class="fa-solid fa-bed-pulse me-2"></i>
         
        </div>
-       <div className="content-section ms-2 px-3 py-4 d-flex  flex-column  justify-content-center  align-items-center ">
+       <div className="content-section ms-2 px-3 py-4 d-flex d-flex  flex-column  justify-content-center  align-items-center  ">
          <div className="number fw-bolder fs-4">{patientLength.length}</div>
          <div className="label fs-5">PATIENT</div>
        </div>
@@ -157,7 +153,7 @@ const getPatientLength =async ()=>{
        </div>
      </div>
  
-     <div className="status-card d-flex rounded-3  mt-3 overflow-hidden    "  style={{backgroundColor:'#6699FF ' , color: 'white'}}>
+     <div className="status-card d-flex rounded-3  mt-3 overflow-hidden  me-5  "  style={{backgroundColor:'#6699FF ' , color: 'white'}}>
        <div className="icon-section p-3 d-flex  align-items-center  justify-content-center  fs-2 " style={{backgroundColor:'#0000FF'}}  >
        <i class="fa-solid fa-notes-medical me-2"></i>
        </div>
@@ -170,87 +166,88 @@ const getPatientLength =async ()=>{
  
        </div>
 
-       <div className=' d-flex  flex-wrap    justify-content-between mx-5         ' >
-    
      
-           
-              <Row className=' col-lg-6  '>
-               
 
-              <div className='mt-5  border  rounded-2 '>
+<div className='d-flex flex-wrap justify-content-between mx-2 mx-lg-5'>
+          <Row className='col-12 col-md-6 col-lg-4 mt-5'>
+            <div className='mt-2 border rounded-2 '>
+              <div className='border d-flex align-items-center rounded py-3 px-1  m-3'>
+                <h4 className='fw-bolder'>Doctor Details</h4>
+                <div className='ms-0 d-flex'>
+                  <button className='btn'></button>
+                  <button className='btn'></button>
+                </div>
+              </div>
 
-              <div className=' border  d-flex  align-items-center  rounded p-3 m-3'>
-            
-            
-            <h4 className='  fw-bolder ' > Doctor Details</h4>
-
-            
-            <div className="ms-auto d-flex ">
-            
-         
-            <button  className="btn "></button>
-                <button  className="btn "></button>
-            </div>
-        </div>
-                 
-              
-            { doctorDetails?.length>0?
-            doctorDetails.map((item)=>(
-            <div className=' border  d-flex  align-items-center  rounded p-3 m-3'>
-               <img src={`${BASE_URL}/uploads/${item.doctorImage}`}  className="rounded-circle me-3"style={{width:'80px'}} />
- 
-                  <h5>{item.doctorname}</h5>
-                  <div className="ms-auto d-flex ">
-                  
-                     <EditDoctor details={item}/>
-                      
-                      <button onClick={()=>handleDeleteDoctor(item._id)}  className="btn "><i class="fa-solid fa-trash text-danger"></i></button>
+              {doctorDetails?.length > 0 ? (
+                doctorDetails.map((item) => (
+                  <div className='border d-flex align-items-center rounded p-3 m-3'>
+                    <img
+                      src={`${BASE_URL}/uploads/${item.doctorImage}`}
+                      className='rounded-circle me-3'
+                      style={{ width: '80px' }}
+                      alt={`Doctor ${item.doctorname}`}
+                    />
+                    <h5>{item.doctorname}</h5>
+                    <div className='ms-auto d-flex'>
+                      <EditDoctor details={item} />
+                      <button
+                        onClick={() => handleDeleteDoctor(item._id)}
+                        className='btn'
+                      >
+                        <i className='fa-solid fa-trash text-danger'></i>
+                      </button>
+                    </div>
                   </div>
-              </div>)):
-              <p className="text-danger fw-bolder fs-4">No Doctor uploaded yet !!</p>
-    }
-          </div>
+                ))
+              ) : (
+                <p className='text-danger fw-bolder fs-4'>
+                  No Doctor uploaded yet !!
+                </p>
+              )}
+            </div>
+          </Row>
+
+
+
           
-              </Row>
-         
-            <Row className=' col-lg-6  '>
-            <div className='mt-5  border  rounded-2 '>
-            <div className=' border  d-flex  align-items-center  rounded p-3 m-3'>
-            <h5 className='me-3'>#</h5>
-              <h5>Name</h5>
 
-              <h6 className='ms-3'>Room No</h6>
-              <div className="ms-auto d-flex ">
-              
-           
-                  
-                  <button  className="btn "></button>
+          <Row className='col-lg-4'>
+            <div className='mt-5 border rounded-2'>
+              <div className='border d-flex align-items-center rounded p-1 m-2'>
+                <h5 className='me-3'>#</h5>
+                <h5>Name</h5>
+                <h6 className='ms-3'>Room No</h6>
+                <div className='ms-auto d-flex'>
+                  <button className='btn'></button>
+                </div>
               </div>
-          </div>
-        { patientDetails?.length>0?
-        patientDetails.map((item , index)=>( <div className=' border  d-flex  align-items-center  rounded p-3 m-3'>
-            <h5 className='me-3'>{index + 1}</h5>
-              <h5>{item.patientName}</h5>
 
-              <h6 className='ms-3'>{item.roomNo}</h6>
-              <div className="ms-auto d-flex ">
-              
-           
-                  
-                  <button onClick={()=>handleDeletePatient(item._id)}    className="btn "><i class="fa-solid fa-trash text-danger"></i></button>
-              </div>
-          </div>)):
-          <p className="text-danger fw-bolder fs-4">No Doctor uploaded yet !!</p>
-}
-      </div>
-    </Row>
-   
-     {/* </Row> */}
+              {patientDetails?.length > 0 ? (
+                patientDetails.map((item, index) => (
+                  <div className='border d-flex align-items-center rounded p-3 m-3'>
+                    <h5 className='me-3'>{index + 1}</h5>
+                    <h5>{item.patientName}</h5>
+                    <h6 className='ms-3'>{item.roomNo}</h6>
+                    <div className='ms-auto d-flex'>
+                      <button
+                        onClick={() => handleDeletePatient(item._id)}
+                        className='btn'
+                      >
+                        <i className='fa-solid fa-trash text-danger'></i>
+                      </button>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <p className='text-danger fw-bolder fs-4'>
+                  No Doctor uploaded yet !!
+                </p>
+              )}
+            </div>
+          </Row>
+        </div>
 
-
-
-
-       </div>
        <ToastContainer autoClose={2000} theme='colored ' position='top-center'/>
     </div>
   )
