@@ -4,8 +4,8 @@ For administrative access, follow these steps:
 To Open the main website:-
 Append '/adlogin' to the URL.
 Use the following credentials:
-Username: admin1
-Password: 12345
+## Username: admin1
+##  Password: 12345
 
 
 # Getting Started with Create React App
